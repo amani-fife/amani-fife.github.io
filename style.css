@@ -1,0 +1,589 @@
+/* ============================================
+   AMANI FIFE — amani-fife.github.io
+   Editorial portfolio stylesheet
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* --- Variables --- */
+:root {
+  --cream: #F4EFE6;
+  --black: #141414;
+  --accent: #D4FF3E;       /* electric chartreuse — the pop */
+  --accent-dark: #A8CC00;
+  --muted: #888;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --nav-height: 64px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- Nav --- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: var(--cream);
+  border-bottom: 1.5px solid var(--black);
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--black);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* --- Page wrapper --- */
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+h1, h2, h3 { font-family: var(--serif); line-height: 1.1; }
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* --- Accent pill / tag --- */
+.pill {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--black);
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--black);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--black); color: var(--cream); }
+
+.btn-fill {
+  background: var(--black);
+  color: var(--cream);
+}
+.btn-fill:hover { background: var(--accent); color: var(--black); border-color: var(--accent); }
+
+/* --- Divider --- */
+hr {
+  border: none;
+  border-top: 1.5px solid var(--black);
+  margin: 0;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1.5px solid var(--black);
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+footer a { transition: color 0.2s; }
+footer a:hover { color: var(--black); }
+
+/* ============================================
+   HOME / ABOUT
+   ============================================ */
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - var(--nav-height));
+  border-bottom: 1.5px solid var(--black);
+}
+
+.home-hero-text {
+  padding: 80px 60px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1.5px solid var(--black);
+}
+
+.home-hero-text h1 {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.home-hero-text h1 em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.home-hero-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.home-hero-image {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  mix-blend-mode: luminosity;
+}
+
+.home-hero-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.25);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  gap: 12px;
+}
+
+.home-about {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 80px 40px;
+  gap: 60px;
+  border-bottom: 1.5px solid var(--black);
+}
+
+.home-about-label {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.home-about-body p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.clients-strip {
+  padding: 40px;
+  border-bottom: 1.5px solid var(--black);
+}
+
+.clients-strip .eyebrow { margin-bottom: 24px; }
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.client-tag {
+  padding: 8px 20px;
+  border: 1.5px solid var(--black);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.client-tag:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ============================================
+   WORK / PORTFOLIO
+   ============================================ */
+
+.work-header {
+  padding: 80px 40px 60px;
+  border-bottom: 1.5px solid var(--black);
+}
+
+.work-header h1 {
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.work-header h1 span {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.work-item {
+  border-bottom: 1.5px solid var(--black);
+  border-right: 1.5px solid var(--black);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: var(--black);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+}
+
+.work-item:nth-child(even) { border-right: none; }
+
+.work-item-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.work-item:hover .work-item-bg {
+  opacity: 0.6;
+  transform: scale(1.04);
+}
+
+.work-item-content {
+  position: relative;
+  z-index: 2;
+}
+
+.work-item-number {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+}
+
+.work-item h2 {
+  font-size: 1.8rem;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.work-item p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.work-item .work-arrow {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.3s, transform 0.3s;
+  z-index: 2;
+}
+
+.work-item:hover .work-arrow {
+  color: var(--accent);
+  transform: translate(4px, -4px);
+}
+
+/* ============================================
+   POETRY
+   ============================================ */
+
+.poetry-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1.5px solid var(--black);
+}
+
+.poetry-header-text {
+  padding: 80px 60px 80px 40px;
+  border-right: 1.5px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.poetry-header-text h1 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.poetry-header-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.poetry-header-quote {
+  padding: 80px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--cream);
+}
+
+.poetry-header-quote blockquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.poetry-header-quote cite {
+  display: block;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.poetry-placeholder {
+  padding: 100px 40px;
+  text-align: center;
+  border-bottom: 1.5px solid var(--black);
+}
+
+.poetry-placeholder .big-text {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.poetry-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.poetry-lines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--black);
+}
+
+.poetry-line-item {
+  padding: 60px 40px;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+}
+
+.poetry-line-item:nth-child(3n) { border-right: none; }
+
+.poetry-line-item .line-num {
+  font-size: 3rem;
+  font-family: var(--serif);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.poetry-line-item p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+
+.contact-hero {
+  padding: 100px 40px;
+  border-bottom: 1.5px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.contact-hero h1 {
+  font-size: clamp(3rem, 7vw, 8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  max-width: 900px;
+}
+
+.contact-hero h1 em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1.5px solid var(--black);
+}
+
+.contact-link-item {
+  padding: 60px 40px;
+  border-right: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  transition: background 0.2s;
+}
+
+.contact-link-item:nth-child(even) { border-right: none; }
+.contact-link-item:hover { background: var(--accent); }
+
+.contact-link-item .eyebrow { margin-bottom: 0; }
+
+.contact-link-item h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.contact-link-arrow {
+  font-size: 2rem;
+  align-self: flex-end;
+  transition: transform 0.3s;
+}
+
+.contact-link-item:hover .contact-link-arrow {
+  transform: translate(6px, -6px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { gap: 20px; }
+
+  .home-hero,
+  .home-about,
+  .poetry-header,
+  .contact-links,
+  .work-grid,
+  .poetry-lines { grid-template-columns: 1fr; }
+
+  .home-hero-text { padding: 60px 20px; }
+  .home-hero-text h1 { font-size: 3.5rem; }
+  .home-hero-image { min-height: 320px; }
+  .home-hero-image-placeholder { min-height: 320px; }
+  .home-about { padding: 60px 20px; }
+  .clients-strip { padding: 40px 20px; }
+
+  .work-header { padding: 60px 20px 40px; }
+  .work-item { border-right: none; min-height: 280px; }
+  .work-item:nth-child(even) { border-right: none; }
+
+  .poetry-header-text { padding: 60px 20px; border-right: none; }
+  .poetry-header-quote { padding: 60px 20px; }
+  .poetry-lines { grid-template-columns: 1fr; }
+  .poetry-line-item { border-right: none; }
+  .poetry-placeholder { padding: 60px 20px; }
+
+  .contact-hero { padding: 60px 20px; }
+  .contact-link-item { border-right: none; padding: 40px 20px; }
+
+  footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+}
