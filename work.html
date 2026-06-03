@@ -94,8 +94,8 @@
         </div>
       </a>
 
-      <a href="https://vimeo.com/383139532?fl=pl&fe=sh" target="_blank" rel="noopener" class="work-item">
-        <div class="work-item-bg" style="background-color: #0e1f3a;"></div>
+      <a href="https://vimeo.com/383139532?fl=pl&fe=sh" target="_blank" rel="noopener" class="work-item" id="wf-foodbank-tile">
+        <div class="work-item-bg" id="wf-foodbank-bg" style="background-color: #0e1f3a; background-size: cover; background-position: center;"></div>
         <span class="work-arrow">↗</span>
         <div class="work-item-content">
           <p class="work-item-number">07</p>
@@ -135,6 +135,13 @@
   </footer>
 
   <script>
+    fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/383139532')
+      .then(r => r.json())
+      .then(data => {
+        const bg = document.getElementById('wf-foodbank-bg');
+        if (bg && data.thumbnail_url) bg.style.backgroundImage = `url('${data.thumbnail_url}')`;
+      });
+
     // Play video on hover, pause on leave
     document.querySelectorAll('.work-item-video').forEach(item => {
       const video = item.querySelector('video');
