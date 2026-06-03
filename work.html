@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Amani Fife</title>
+  <meta name="description" content="Portfolio of senior copywriter Amani Fife — campaigns for AT&T, Wells Fargo, Skittles, and more." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Amani Fife</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="poetry.html">Poetry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <!-- HEADER -->
+    <section class="work-header">
+      <p class="eyebrow">Portfolio</p>
+      <h1>
+        The work.
+        <span>All of it.</span>
+      </h1>
+    </section>
+
+    <!-- GRID -->
+    <div class="work-grid">
+
+      <a href="#att" class="work-item work-item-video">
+        <video class="work-item-bg work-item-video-bg" src="images/att.mp4" muted loop playsinline preload="none"></video>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">01</p>
+          <h2>AT&T Fiber</h2>
+          <p>Telecom · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#wellsfargo-mortgage" class="work-item">
+        <div class="work-item-bg" style="background-color: #5a1e0e;"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">02</p>
+          <h2>Wells Fargo Home Mortgage</h2>
+          <p>Financial Services · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#lavictoria" class="work-item">
+        <div class="work-item-bg" style="background-color: #1e3a1a;"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">03</p>
+          <h2>La Victoria</h2>
+          <p>Food & Beverage · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#skittles" class="work-item">
+        <div class="work-item-bg" style="background: linear-gradient(135deg, #7B2FBE, #E8401C, #F7C23E);"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">04</p>
+          <h2>Skittles</h2>
+          <p>Confectionery · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#chichis" class="work-item">
+        <div class="work-item-bg" style="background-color: #3a1a0e;"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">05</p>
+          <h2>ChiChi's Salsa</h2>
+          <p>Food & Beverage · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#herdez" class="work-item work-item-video">
+        <video class="work-item-bg work-item-video-bg" src="images/herdez.mp4" muted loop playsinline preload="none"></video>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">06</p>
+          <h2>Herdez</h2>
+          <p>Food & Beverage · Campaign</p>
+        </div>
+      </a>
+
+      <a href="#wellsfargo-holiday" class="work-item">
+        <div class="work-item-bg" style="background-color: #0e1f3a;"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">07</p>
+          <h2>Wells Fargo Food Bank</h2>
+          <p>Financial Services · Social Impact</p>
+        </div>
+      </a>
+
+      <a href="#globalfund" class="work-item">
+        <div class="work-item-bg" style="background-color: #1a0e2e;"></div>
+        <span class="work-arrow">↗</span>
+        <div class="work-item-content">
+          <p class="work-item-number">08</p>
+          <h2>Global Fund for Women</h2>
+          <p>Nonprofit · Campaign</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- CTA -->
+    <section style="padding: 80px 40px; text-align: center; border-top: 1.5px solid var(--black);">
+      <p class="eyebrow" style="margin-bottom: 24px;">Want to see more?</p>
+      <a href="contact.html" class="btn btn-fill">Let's talk</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 Amani Fife</span>
+    <span>
+      <a href="mailto:amanifife@gmail.com">amanifife@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/amanifife/" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </footer>
+
+  <script>
+    // Play video on hover, pause on leave
+    document.querySelectorAll('.work-item-video').forEach(item => {
+      const video = item.querySelector('video');
+      if (!video) return;
+      item.addEventListener('mouseenter', () => video.play());
+      item.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+  </script>
+</body>
+</html>
