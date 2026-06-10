@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conagra — Amani Fife</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { margin: 0; background: #000; display: flex; flex-direction: column; min-height: 100vh; }
+    .video-page-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: #000 !important; border-bottom-color: #000 !important; }
+    .video-page-nav a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.7; }
+    .video-page-nav a:hover { opacity: 1; }
+    .content-wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 100px 40px 60px; gap: 40px; }
+    .description { width: 100%; max-width: 1100px; color: #F4EFE6; font-family: Georgia, serif; font-size: 1rem; line-height: 1.7; opacity: 0.85; }
+    .image-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; max-width: 1100px; }
+    .image-grid img { width: 100%; border-radius: 4px; object-fit: cover; }
+    @media (max-width: 700px) { .image-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="video-page-nav">
+    <a href="index.html">Amani Fife</a>
+    <a href="work.html">← Back to Work</a>
+  </nav>
+  <div class="content-wrapper">
+    <p class="description">Sometimes, you just need a good banner ad. Here are some I wrote for Conagra's variety of brands.</p>
+    <div class="image-grid">
+      <img src="images/Conagra 1.png" alt="Conagra ad 1" />
+      <img src="images/Conagra 2.png" alt="Conagra ad 2" />
+      <img src="images/Conagra 3.png" alt="Conagra ad 3" />
+      <img src="images/Conagra 4.png" alt="Conagra ad 4" />
+      <img src="images/Conagra 5.png" alt="Conagra ad 5" />
+      <img src="images/Conagra 6.png" alt="Conagra ad 6" />
+    </div>
+  </div>
+</body>
+</html>
